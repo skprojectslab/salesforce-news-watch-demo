@@ -320,7 +320,7 @@
 
     async function loadNews() {
       try {
-        const response = await fetch("data/current.json");
+        const response = await fetch("./data/current.json");
         if (!response.ok) throw new Error("Unable to load current.json");
 
         const data = await response.json();
