@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-10-09",
+  "date_range": {
+    "from": "2026-10-01",
+    "to": "2026-10-07"
+  },
+  "articles": [
+    {
+      "article_id": "siliconangle-listen-labs-20261001",
+      "headline": "Salesforce to acquire AI customer research startup Listen Labs in reported $2B deal",
+      "publication_date": "2026-10-01",
+      "source": "SiliconANGLE",
+      "source_type": "News / Media",
+      "article_type": "News",
+      "primary_category": "M&A / Investment",
+      "priority": "High",
+      "original_url": "https://siliconangle.com/2026/10/01/salesforce-to-acquire-ai-customer-research-startup-listen-labs-in-reported-2b-deal/",
+      "url_verified": true,
+      "summary": "Salesforce agreed to acquire AI customer-research startup Listen Labs in a deal reportedly worth about $2 billion, although the companies did not disclose terms.",
+      "why_it_matters": "Listen Labs adds AI agents for customer research and Salesforce plans to apply the technology across Marketing Cloud and Service Cloud."
+    },
+    {
+      "article_id": "zacks-agentforce-bundles-20261002",
+      "headline": "Salesforce Expands AI Bundles: Will Higher Adoption Boost ARR?",
+      "publication_date": "2026-10-02",
+      "source": "Zacks Investment Research",
+      "source_type": "Analyst / Research",
+      "article_type": "Analysis",
+      "primary_category": "AI & Agentforce",
+      "priority": "Medium",
+      "original_url": "https://www.zacks.com/stock/news/2999297/salesforce-expands-ai-bundles-will-higher-adoption-boost-arr",
+      "url_verified": true,
+      "summary": "Zacks examines Salesforce's Core, Advanced and Max Agentforce editions and reports strong growth in Agentforce and Data 360 ARR.",
+      "why_it_matters": "The bundling strategy could accelerate enterprise AI adoption and increase recurring revenue."
+    },
+    {
+      "article_id": "isaca-salesforce-security-20261002",
+      "headline": "Rethinking Salesforce Security: From One-Time Scoping to Continuous Monitoring",
+      "publication_date": "2026-10-02",
+      "source": "ISACA",
+      "source_type": "Industry Publication",
+      "article_type": "Analysis",
+      "primary_category": "Security / Trust",
+      "priority": "Medium",
+      "original_url": "https://www.isaca.org/resources/news-and-trends/industry-news/2026/rethinking-salesforce-security-from-one-time-scoping-to-continuous-monitoring",
+      "url_verified": true,
+      "summary": "ISACA analyzes Salesforce security risks involving connected applications, credentials and excessive permissions.",
+      "why_it_matters": "The analysis highlights the importance of identity governance, integration security and configuration controls in Salesforce environments."
+    },
+    {
+      "article_id": "uptimerobot-salesforce-outage-20261006",
+      "headline": "Salesforce outage on 2026-10-06",
+      "publication_date": "2026-10-06",
+      "source": "UptimeRobot",
+      "source_type": "Industry Publication",
+      "article_type": "News",
+      "primary_category": "Product & Platform",
+      "priority": "Medium",
+      "original_url": "https://uptimerobot.com/is-it-down/salesforce/2026-10-06/",
+      "url_verified": true,
+      "summary": "Salesforce experienced multiple incidents on 6 October 2026, including a prolonged Data 360 degradation affecting some customers.",
+      "why_it_matters": "Extended service degradation can affect customers relying on Salesforce data, analytics and downstream workflows."
+    },
+    {
+      "article_id": "salesforce-trust-multi-agent-20261007",
+      "headline": "From Autonomy to Accountability: How to Think About Trust in the Multi-Agent Future",
+      "publication_date": "2026-10-07",
+      "source": "Salesforce",
+      "source_type": "Salesforce Official",
+      "article_type": "Thought Leadership",
+      "primary_category": "Security / Trust",
+      "priority": "Low",
+      "original_url": "https://www.salesforce.com/news/stories/trust-in-multi-agent-future/",
+      "url_verified": true,
+      "summary": "Salesforce outlines security and governance principles for interoperable multi-agent systems.",
+      "why_it_matters": "The approach highlights identity, memory isolation, verification and human controls as important to enterprise multi-agent adoption."
+    }
+  ]
+}
