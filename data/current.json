@@ -11,8 +11,8 @@
       "priority": "High",
       "original_url": "https://uk.finance.yahoo.com/news/salesforce-crm-unveils-hunter-ai-042659534.html",
       "url_verified": true,
-      "summary": "Salesforce introduced Hunter, an AI outbound sales agent built on Agentforce, with ZoomInfo and Demandbase supplying in-platform prospect and account intelligence. The article also examines how Hunter and Salesforce's expanded Docusign workflows connect prospecting, CRM data, agreements, and Slack.",
-      "why_it_matters": "Hunter places Agentforce directly in outbound revenue workflows and could support higher-value, usage-led subscriptions, but the expanded data and automation surface also increases the importance of security, reliability, and customer retention."
+      "summary": "Salesforce introduced Hunter, an AI outbound sales agent built on Agentforce, with ZoomInfo and Demandbase supplying in-platform prospect and account intelligence. The article also examines how Hunter and expanded Docusign workflows connect prospecting, CRM data, agreements, and Slack.",
+      "why_it_matters": "Hunter places Agentforce directly in outbound revenue workflows and could support higher-value, usage-led subscriptions, while increasing the importance of security, reliability, and customer retention."
     },
     {
       "article_id": "salesforce-ben-salesforce-confirms-new-mfa-updates-what-you-should-expect-2026-10-15",
@@ -40,7 +40,7 @@
       "original_url": "https://investor.docusign.com/news-and-events/press-releases/news-details/2026/Docusign-and-Salesforce-Launch-Intelligent-Agreement-Management-Natively-Across-Salesforce-to-Power-Agentic-Agreement-Workflows/default.aspx",
       "url_verified": true,
       "summary": "Docusign expanded its more than 20-year Salesforce partnership by bringing Intelligent Agreement Management natively into Salesforce, Agentforce, and Slack. The integrations support agreement generation, negotiation, finalization, contract review, renewal tracking, post-execution analytics, and agreement actions within Slack.",
-      "why_it_matters": "Embedding agreement intelligence and workflows across Salesforce's agentic platform can reduce friction in revenue processes and help sales and legal teams move from customer engagement to signed agreements without switching systems."
+      "why_it_matters": "Embedding agreement intelligence and workflows across the Salesforce agentic platform can reduce friction in revenue processes and help sales and legal teams move from customer engagement to signed agreements without switching systems."
     },
     {
       "article_id": "salesforce-salesforce-signs-definitive-agreement-to-acquire-loops-2026-10-12",
@@ -54,7 +54,7 @@
       "original_url": "https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-loops/",
       "url_verified": true,
       "summary": "Salesforce signed a definitive agreement to acquire Loops, an AI-powered analytics platform that continuously monitors business performance, explains changes in key metrics, and surfaces improvement opportunities. Salesforce plans to integrate Loops technology and specialized talent into Tableau after the transaction closes.",
-      "why_it_matters": "The acquisition advances Salesforce's agentic analytics strategy by adding proactive monitoring and explanations of performance drivers. The transaction is expected to close in early November of Salesforce's fiscal year 2027, subject to customary closing conditions."
+      "why_it_matters": "The acquisition advances the Salesforce agentic analytics strategy by adding proactive monitoring and explanations of performance drivers. The transaction is expected to close in early November of Salesforce fiscal year 2027, subject to customary closing conditions."
     },
     {
       "article_id": "zacks-investment-research-salesforce-expands-ai-bundles-will-higher-adoption-boost-arr-2026-10-02",
@@ -67,7 +67,7 @@
       "priority": "Medium",
       "original_url": "https://www.zacks.com/stock/news/2999297/salesforce-expands-ai-bundles-will-higher-adoption-boost-arr",
       "url_verified": true,
-      "summary": "Zacks analyzed Salesforce's premium AI bundles combining Agentforce, Slack, Tableau Next, security, and support. Agentforce ARR topped $1.5 billion in the second quarter, up more than 240% year over year, while combined Agentforce and Data 360 ARR reached nearly $3.9 billion, rising more than 210%. The analysis noted that AI growth had not yet materially changed Salesforce's overall growth rate.",
+      "summary": "Zacks analyzed premium Salesforce AI bundles combining Agentforce, Slack, Tableau Next, security, and support. Agentforce ARR topped $1.5 billion in the second quarter, up more than 240% year over year, while combined Agentforce and Data 360 ARR reached nearly $3.9 billion, rising more than 210%. The analysis noted that AI growth had not yet materially changed the overall Salesforce growth rate.",
       "why_it_matters": "The bundled approach could increase adoption and recurring revenue as customers move from AI trials to broader purchases, but Salesforce faces intensifying competition from Microsoft and Oracle and still needs to translate adoption into faster company-wide growth."
     },
     {
@@ -82,7 +82,7 @@
       "original_url": "https://www.isaca.org/resources/news-and-trends/industry-news/2026/rethinking-salesforce-security-from-one-time-scoping-to-continuous-monitoring",
       "url_verified": true,
       "summary": "ISACA examined three Salesforce exposure paths: fraudulent connected apps authorized through voice phishing, compromised credentials for trusted integrations, and overly broad guest-user permissions. The article recommends continuous monitoring of connected-app approvals, OAuth scopes, token use, API traffic, and session anomalies, along with periodic reviews of guest access, elevated permissions, sharing rules, and configuration changes.",
-      "why_it_matters": "The analysis shows that Salesforce environments can be exposed without a platform vulnerability when identity governance, integration oversight, and configuration management are weak. It also argues that organizations should reassess Salesforce's internal-control scope as the platform expands into billing, commissions, and revenue-related workflows."
+      "why_it_matters": "The analysis shows that Salesforce environments can be exposed without a platform vulnerability when identity governance, integration oversight, and configuration management are weak. It also argues that organizations should reassess internal-control scope as Salesforce expands into billing, commissions, and revenue-related workflows."
     }
   ]
 }
