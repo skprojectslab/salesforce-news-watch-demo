@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "article_id": "destination-crm-salesforce-introduces-hunter-a-sales-agent-2026-10-16",
+      "headline": "Salesforce Introduces Hunter, a Sales Agent",
+      "publication_date": "2026-10-16",
+      "source": "Destination CRM",
+      "source_type": "Industry Publication",
+      "article_type": "News",
+      "primary_category": "AI & Agentforce",
+      "priority": "High",
+      "original_url": "NOT VERIFIED",
+      "url_verified": false,
+      "summary": "Salesforce introduced Hunter, an outbound sales agent for Sales Cloud that can identify accounts and contacts, personalize outreach, prepare follow-ups, update opportunities, and recommend next steps while operating within existing permissions and approval rules.",
+      "why_it_matters": "Hunter extends Agentforce into core revenue-generation workflows and uses data partnerships with ZoomInfo, Demandbase, and Apollo to strengthen prospecting intelligence inside Salesforce."
+    },
+    {
       "article_id": "salesforce-salesforce-selected-by-hmrc-to-modernise-tax-services-for-uk-citizens-and-businesses-2026-10-15",
       "headline": "Salesforce Selected by HMRC to Modernise Tax Services for UK Citizens and Businesses",
       "publication_date": "2026-10-15",
@@ -11,8 +25,36 @@
       "priority": "High",
       "original_url": "NOT VERIFIED",
       "url_verified": false,
-      "summary": "Salesforce announced a strategic agreement with HM Revenue and Customs worth up to £2 billion and lasting up to 15 years. Salesforce will become HMRC's strategic enterprise CRM provider, using Agentforce, Public Sector Solutions, Marketing Cloud, and Data 360 to support more than 34 million citizens and five million businesses.",
-      "why_it_matters": "The agreement is a major public-sector win that places Salesforce CRM, data, and AI technology at the center of one of the United Kingdom's most important citizen-service and tax-administration transformations."
+      "summary": "Salesforce announced that HMRC selected the company to support modernization of tax services for UK citizens and businesses.",
+      "why_it_matters": "A selection by a major national tax authority represents a strategically important public-sector customer engagement for Salesforce in the UK."
+    },
+    {
+      "article_id": "salesforce-ben-salesforce-confirms-new-mfa-updates-what-you-should-expect-2026-10-15",
+      "headline": "Salesforce Confirms New MFA Updates: What You Should Expect",
+      "publication_date": "2026-10-15",
+      "source": "Salesforce Ben",
+      "source_type": "Industry Publication",
+      "article_type": "News",
+      "primary_category": "Security / Trust",
+      "priority": "High",
+      "original_url": "https://www.salesforceben.com/salesforce-confirms-new-mfa-updates-what-you-should-expect/",
+      "url_verified": true,
+      "summary": "Salesforce confirmed that MFA enforcement has not been delayed indefinitely. The company said it is working directly with a small number of customers that previously received extensions, while over 90% of customers have adopted MFA.",
+      "why_it_matters": "The clarification affects customer security planning and confirms that Salesforce intends to complete MFA and phishing-resistant MFA enforcement while allowing limited additional time for some customers."
+    },
+    {
+      "article_id": "docusign-docusign-and-salesforce-launch-intelligent-agreement-management-natively-across-salesforce-to-power-agentic-agreement-workflows-2026-10-13",
+      "headline": "Docusign and Salesforce Launch Intelligent Agreement Management Natively Across Salesforce to Power Agentic Agreement Workflows",
+      "publication_date": "2026-10-13",
+      "source": "Docusign",
+      "source_type": "News / Media",
+      "article_type": "Official Announcement",
+      "primary_category": "Partnerships",
+      "priority": "High",
+      "original_url": "https://investor.docusign.com/news-and-events/press-releases/news-details/2026/Docusign-and-Salesforce-Launch-Intelligent-Agreement-Management-Natively-Across-Salesforce-to-Power-Agentic-Agreement-Workflows/default.aspx",
+      "url_verified": true,
+      "summary": "Docusign expanded its more than 20-year Salesforce partnership by bringing Intelligent Agreement Management natively into Salesforce, Agentforce, and Slack. The integration supports agreement generation, negotiation, review, renewal tracking, and Slack-based actions.",
+      "why_it_matters": "The partnership embeds agreement data and workflows directly into Salesforce's agentic platform, potentially reducing friction in sales cycles and making Agentforce more useful for revenue teams."
     },
     {
       "article_id": "salesforce-salesforce-signs-definitive-agreement-to-acquire-loops-2026-10-12",
@@ -25,22 +67,8 @@
       "priority": "High",
       "original_url": "https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-loops/",
       "url_verified": true,
-      "summary": "Salesforce signed a definitive agreement to acquire Loops, an AI-powered analytics platform that monitors business performance, explains changes in key metrics, and identifies improvement opportunities. Salesforce plans to bring Loops technology and specialist talent into Tableau, with closing expected in early November of Salesforce's fiscal year 2027, subject to customary conditions.",
-      "why_it_matters": "The acquisition strengthens Salesforce's agentic analytics strategy by helping Tableau proactively explain performance changes and recommend actions through channels including Slack and email."
-    },
-    {
-      "article_id": "siliconangle-salesforce-to-acquire-ai-customer-research-startup-listen-labs-in-reported-2b-deal-2026-10-01",
-      "headline": "Salesforce to acquire AI customer research startup Listen Labs in reported $2B deal",
-      "publication_date": "2026-10-01",
-      "source": "SiliconANGLE",
-      "source_type": "News / Media",
-      "article_type": "News",
-      "primary_category": "M&A / Investment",
-      "priority": "High",
-      "original_url": "https://siliconangle.com/2026/10/01/salesforce-to-acquire-ai-customer-research-startup-listen-labs-in-reported-2b-deal/",
-      "url_verified": true,
-      "summary": "SiliconANGLE reported that Salesforce signed a definitive agreement to acquire Listen Labs. An earlier report placed the discussed price at about $2 billion, although neither company disclosed terms. Salesforce expects the deal to close in the fourth quarter of fiscal 2027, subject to regulatory clearance, and plans to apply the technology within Marketing Cloud and Service Cloud.",
-      "why_it_matters": "Listen Labs adds AI-driven customer research, access to more than 50 million potential participants, interviews in more than 120 languages, and digital-twin simulations that could give Salesforce agents richer qualitative customer context."
+      "summary": "Salesforce signed a definitive agreement to acquire Loops, an AI-powered analytics platform that monitors business performance, explains metric changes, and surfaces recommended actions. Salesforce plans to bring Loops technology and talent into Tableau after closing.",
+      "why_it_matters": "The acquisition strengthens Salesforce's agentic analytics strategy by adding proactive performance monitoring and action-oriented insights to Tableau, Slack, and email workflows."
     },
     {
       "article_id": "salesforce-salesforce-pledges-free-slack-enterprise-access-to-millions-of-higher-and-further-education-students-in-the-uk-2026-10-15",
@@ -51,10 +79,10 @@
       "article_type": "Official Announcement",
       "primary_category": "Strategy",
       "priority": "Medium",
-      "original_url": "https://www.salesforce.com/uk/news/press-releases/2026/10/15/slack-education-announcement/",
-      "url_verified": true,
-      "summary": "Salesforce announced free Slack Enterprise access for millions of higher and further education students in the United Kingdom. The initiative is part of Salesforce's $6 billion UK investment through 2030 and gives participating institutions access to Slack, Slackbot, and AI agents with administrative controls and guardrails.",
-      "why_it_matters": "The initiative expands practical AI and collaboration training while building Slack familiarity among future workers and strengthening Salesforce's long-term UK education and talent strategy."
+      "original_url": "NOT VERIFIED",
+      "url_verified": false,
+      "summary": "Salesforce announced a pledge to provide free Slack enterprise access to millions of higher and further education students in the UK.",
+      "why_it_matters": "The initiative can expand Slack familiarity and adoption among future workers while strengthening Salesforce's education and workforce-development positioning."
     },
     {
       "article_id": "salesforce-tottenham-hotspur-launches-ask-spurs-on-agentforce-2026-10-15",
@@ -65,80 +93,24 @@
       "article_type": "Official Announcement",
       "primary_category": "Customers & Deals",
       "priority": "Medium",
-      "original_url": "https://www.salesforce.com/news/press-releases/2026/10/15/tottenham-hotspur-becomes-agentic-enterprise-with-agentforce/",
-      "url_verified": true,
-      "summary": "Tottenham Hotspur launched Ask Spurs, an Agentforce assistant available in eleven languages. The club connected more than 4.6 million fan accounts across more than 10 systems, and Salesforce reported that Ask Spurs achieved an 86% engagement rate with 20% of interactions resolved by Agentforce alone.",
-      "why_it_matters": "The deployment provides a prominent consumer-facing Agentforce use case and demonstrates how Salesforce can combine Data 360, Snowflake Zero Copy, and AI to support fan engagement at global scale."
+      "original_url": "NOT VERIFIED",
+      "url_verified": false,
+      "summary": "Salesforce announced that Tottenham Hotspur launched Ask Spurs on Agentforce.",
+      "why_it_matters": "The deployment is a visible customer example of Agentforce use in professional sports and fan engagement."
     },
     {
-      "article_id": "salesforce-ben-salesforce-confirms-new-mfa-updates-what-you-should-expect-2026-10-15",
-      "headline": "Salesforce Confirms New MFA Updates: What You Should Expect",
-      "publication_date": "2026-10-15",
-      "source": "Salesforce Ben",
-      "source_type": "Industry Publication",
-      "article_type": "News",
-      "primary_category": "Security / Trust",
-      "priority": "Medium",
-      "original_url": "https://www.salesforceben.com/salesforce-confirms-new-mfa-updates-what-you-should-expect/",
-      "url_verified": true,
-      "summary": "Salesforce confirmed that multifactor authentication enforcement has not been delayed indefinitely. The company said more than 90% of customers have adopted MFA and that it will work with a small number of customers needing additional time over the next six to eight months.",
-      "why_it_matters": "The clarification affects authentication planning for customers that have not completed MFA or phishing-resistant MFA deployment, especially administrators and other elevated users."
-    },
-    {
-      "article_id": "docusign-docusign-and-salesforce-launch-intelligent-agreement-management-natively-across-salesforce-to-power-agentic-agreement-workflows-2026-10-13",
-      "headline": "Docusign and Salesforce Launch Intelligent Agreement Management Natively Across Salesforce to Power Agentic Agreement Workflows",
-      "publication_date": "2026-10-13",
-      "source": "Docusign",
-      "source_type": "News / Media",
-      "article_type": "Official Announcement",
-      "primary_category": "Partnerships",
-      "priority": "Medium",
-      "original_url": "https://www.prnewswire.com/news-releases/docusign-and-salesforce-launch-intelligent-agreement-management-natively-across-salesforce-to-power-agentic-agreement-workflows-302900284.html",
-      "url_verified": true,
-      "summary": "Docusign expanded its more than 20-year Salesforce partnership by bringing Intelligent Agreement Management natively into Salesforce, Agentforce, and Slack. Teams can generate and send agreements, review contracts, track renewals, and route approvals without leaving Salesforce or Slack workflows.",
-      "why_it_matters": "The expansion embeds contract intelligence and agreement actions into Salesforce's agentic workflows, potentially reducing friction in revenue processes and making agreement data available to people and AI agents at the point of work."
-    },
-    {
-      "article_id": "salesforce-ben-85-of-customers-have-tried-agentforce-but-demand-hasn-t-picked-up-why-2026-10-12",
-      "headline": "85% of Customers Have Tried Agentforce, But Demand Hasn't Picked Up. Why?",
-      "publication_date": "2026-10-12",
-      "source": "Salesforce Ben",
-      "source_type": "Industry Publication",
+      "article_id": "zacks-investment-research-salesforce-expands-ai-bundles-will-higher-adoption-boost-arr-2026-10-02",
+      "headline": "Salesforce Expands AI Bundles: Will Higher Adoption Boost ARR?",
+      "publication_date": "2026-10-02",
+      "source": "Zacks Investment Research",
+      "source_type": "Analyst / Research",
       "article_type": "Analysis",
-      "primary_category": "Industry / Market",
-      "priority": "Medium",
-      "original_url": "https://www.salesforceben.com/85-of-customers-have-tried-agentforce-but-demand-hasnt-picked-up-why/",
-      "url_verified": true,
-      "summary": "Salesforce Ben analyzed an Oppenheimer survey in which 85% of surveyed customers had tested or deployed Agentforce, while half remained in pilot mode. Respondents also indicated that around 40% of data flowing through Agentforce was handled by a third-party provider rather than Data 360.",
-      "why_it_matters": "The findings highlight the gap between experimentation and production adoption, which is critical to Salesforce's ability to convert Agentforce interest into durable consumption and revenue growth."
-    },
-    {
-      "article_id": "tnw-salesforce-renames-aiforce-to-siforce-as-trump-s-ai-rebrand-spreads-2026-10-10",
-      "headline": "Salesforce renames AIForce to SIForce as Trump's AI rebrand spreads",
-      "publication_date": "2026-10-10",
-      "source": "TNW",
-      "source_type": "News / Media",
-      "article_type": "News",
       "primary_category": "AI & Agentforce",
       "priority": "Medium",
-      "original_url": "https://thenextweb.com/news/salesforce-aiforce-siforce-trump-super-intelligence",
-      "url_verified": true,
-      "summary": "TNW reported that Marc Benioff renamed Salesforce's AIForce agent platform SIForce, adopting the term super intelligence after a September 29 executive order directed United States federal agencies to replace artificial intelligence terminology in official materials. The change applies to the agent platform, not the Salesforce company name.",
-      "why_it_matters": "The rebrand changes the identity of a newly launched strategic platform and creates messaging, documentation, training, and customer-communication work across the Salesforce ecosystem."
-    },
-    {
-      "article_id": "salesforce-ben-salesforce-winter-27-is-live-12-features-to-share-with-your-team-2026-10-07",
-      "headline": "Salesforce Winter '27 Is Live: 12 Features to Share With Your Team",
-      "publication_date": "2026-10-07",
-      "source": "Salesforce Ben",
-      "source_type": "Industry Publication",
-      "article_type": "Analysis",
-      "primary_category": "Product & Platform",
-      "priority": "Medium",
-      "original_url": "https://www.salesforceben.com/salesforce-winter-27-is-live-12-features-to-share-with-your-team/",
-      "url_verified": true,
-      "summary": "Salesforce Ben reviewed 12 Winter '27 features, including Flow Builder Test Mode in beta, bulk record handling in screen flows, permission-enforcing flow context, User object field-history tracking, higher Apex heap limits, and REST API support for the latest version alias.",
-      "why_it_matters": "Winter '27 changes automation development, testing, security, auditability, and integration practices, requiring Salesforce administrators, developers, and architects to assess configuration and regression-testing needs."
+      "original_url": "NOT VERIFIED",
+      "url_verified": false,
+      "summary": "Zacks analyzed Salesforce's expansion of premium AI bundles combining Agentforce, Slack, Tableau Next, security, and support. It highlighted Agentforce ARR above $1.5 billion in the second quarter, up more than 240% year over year, while noting that AI growth had not yet materially changed the company's overall growth rate.",
+      "why_it_matters": "The analysis focuses on whether bundled AI adoption can translate strong Agentforce usage into broader recurring-revenue acceleration amid competition from Microsoft and Oracle."
     },
     {
       "article_id": "isaca-rethinking-salesforce-security-from-one-time-scoping-to-continuous-monitoring-2026-10-02",
@@ -151,22 +123,8 @@
       "priority": "Medium",
       "original_url": "https://www.isaca.org/resources/news-and-trends/industry-news/2026/rethinking-salesforce-security-from-one-time-scoping-to-continuous-monitoring",
       "url_verified": true,
-      "summary": "ISACA analyzed Salesforce risks involving fraudulent connected apps, compromised integration credentials, overly broad guest-user permissions, and financial-control scope. It recommended continuous monitoring for app approvals and token anomalies, quarterly access reviews, review at every deployment for relevant production changes, and monthly configuration and log reviews.",
-      "why_it_matters": "The analysis shows that Salesforce environments can be exposed without a platform flaw when identity governance, OAuth oversight, guest access, configuration management, and financial-control scoping do not keep pace with expanded platform use."
-    },
-    {
-      "article_id": "zacks-investment-research-salesforce-expands-ai-bundles-will-higher-adoption-boost-arr-2026-10-02",
-      "headline": "Salesforce Expands AI Bundles: Will Higher Adoption Boost ARR?",
-      "publication_date": "2026-10-02",
-      "source": "Zacks Investment Research",
-      "source_type": "Analyst / Research",
-      "article_type": "Analysis",
-      "primary_category": "Financial / Earnings",
-      "priority": "Medium",
-      "original_url": "https://www.zacks.com/stock/news/2999297/salesforce-expands-ai-bundles-will-higher-adoption-boost-arr",
-      "url_verified": true,
-      "summary": "Zacks analyzed Salesforce's Core, Advanced, and Max AI bundles and their potential effect on recurring revenue. It noted that Agentforce ARR topped $1.5 billion in the second quarter, up more than 240% year over year, while combined Agentforce and Data 360 ARR reached nearly $3.9 billion, up more than 210%. Bookings from Agentforce One Edition and Agentforce for Apps more than doubled sequentially.",
-      "why_it_matters": "The analysis connects Salesforce's bundling strategy to its ability to monetize AI adoption, increase spending by existing customers, and compete with Microsoft and Oracle as they also package AI capabilities into enterprise software offerings."
+      "summary": "ISACA analyzed three recurring Salesforce exposure paths: fraudulent connected apps, compromised trusted integrations, and overly broad guest-user permissions. It argued that organizations should continuously monitor OAuth access, API traffic, privileged permissions, configuration drift, and financial-reporting scope.",
+      "why_it_matters": "The article frames Salesforce security as an ongoing governance and internal-control responsibility, especially as the platform expands into billing, commissions, and revenue-related workflows."
     }
   ]
 }
