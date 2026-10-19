@@ -1,46 +1,18 @@
 {
   "articles": [
     {
-      "article_id": "destination-crm-salesforce-introduces-hunter-a-sales-agent-2026-10-16",
-      "headline": "Salesforce Introduces Hunter, a Sales Agent",
+      "article_id": "yahoo-finance-salesforce-crm-unveils-hunter-for-ai-powered-outbound-sales-2026-10-16",
+      "headline": "Salesforce (CRM) Unveils Hunter For AI Powered Outbound Sales",
       "publication_date": "2026-10-16",
-      "source": "Destination CRM",
-      "source_type": "Industry Publication",
-      "article_type": "News",
+      "source": "Yahoo Finance",
+      "source_type": "News / Media",
+      "article_type": "Analysis",
       "primary_category": "AI & Agentforce",
       "priority": "High",
-      "original_url": "NOT VERIFIED",
-      "url_verified": false,
-      "summary": "Salesforce introduced Hunter, an outbound sales agent for Sales Cloud that can identify accounts and contacts, personalize outreach, prepare follow-ups, update opportunities, and recommend next steps while operating within existing permissions and approval rules.",
-      "why_it_matters": "Hunter extends Agentforce into core revenue-generation workflows and uses data partnerships with ZoomInfo, Demandbase, and Apollo to strengthen prospecting intelligence inside Salesforce."
-    },
-    {
-      "article_id": "salesforce-salesforce-selected-by-hmrc-to-modernise-tax-services-for-uk-citizens-and-businesses-2026-10-15",
-      "headline": "Salesforce Selected by HMRC to Modernise Tax Services for UK Citizens and Businesses",
-      "publication_date": "2026-10-15",
-      "source": "Salesforce",
-      "source_type": "Salesforce Official",
-      "article_type": "Official Announcement",
-      "primary_category": "Customers & Deals",
-      "priority": "High",
-      "original_url": "NOT VERIFIED",
-      "url_verified": false,
-      "summary": "Salesforce announced that HMRC selected the company to support modernization of tax services for UK citizens and businesses.",
-      "why_it_matters": "A selection by a major national tax authority represents a strategically important public-sector customer engagement for Salesforce in the UK."
-    },
-    {
-      "article_id": "salesforce-ben-salesforce-confirms-new-mfa-updates-what-you-should-expect-2026-10-15",
-      "headline": "Salesforce Confirms New MFA Updates: What You Should Expect",
-      "publication_date": "2026-10-15",
-      "source": "Salesforce Ben",
-      "source_type": "Industry Publication",
-      "article_type": "News",
-      "primary_category": "Security / Trust",
-      "priority": "High",
-      "original_url": "https://www.salesforceben.com/salesforce-confirms-new-mfa-updates-what-you-should-expect/",
+      "original_url": "https://finance.yahoo.com/technology/ai/articles/salesforce-crm-unveils-hunter-ai-042659534.html",
       "url_verified": true,
-      "summary": "Salesforce confirmed that MFA enforcement has not been delayed indefinitely. The company said it is working directly with a small number of customers that previously received extensions, while over 90% of customers have adopted MFA.",
-      "why_it_matters": "The clarification affects customer security planning and confirms that Salesforce intends to complete MFA and phishing-resistant MFA enforcement while allowing limited additional time for some customers."
+      "summary": "Salesforce introduced Hunter, an AI outbound sales agent built on Agentforce, with ZoomInfo and Demandbase supplying in-platform prospect and account intelligence. The article also examines how Hunter and Salesforce's expanded Docusign workflows connect prospecting, CRM data, agreements, and Slack.",
+      "why_it_matters": "Hunter places Agentforce directly in outbound revenue workflows and could support higher-value, usage-led subscriptions, but the expanded data and automation surface also increases the importance of security, reliability, and customer retention."
     },
     {
       "article_id": "docusign-docusign-and-salesforce-launch-intelligent-agreement-management-natively-across-salesforce-to-power-agentic-agreement-workflows-2026-10-13",
@@ -51,10 +23,10 @@
       "article_type": "Official Announcement",
       "primary_category": "Partnerships",
       "priority": "High",
-      "original_url": "https://investor.docusign.com/news-and-events/press-releases/news-details/2026/Docusign-and-Salesforce-Launch-Intelligent-Agreement-Management-Natively-Across-Salesforce-to-Power-Agentic-Agreement-Workflows/default.aspx",
+      "original_url": "https://www.docusign.com/company/news-center/docusign-and-salesforce-launch-intelligent-agreement-management-natively-across-salesforce-to-power-agentic-agreement-workflows",
       "url_verified": true,
-      "summary": "Docusign expanded its more than 20-year Salesforce partnership by bringing Intelligent Agreement Management natively into Salesforce, Agentforce, and Slack. The integration supports agreement generation, negotiation, review, renewal tracking, and Slack-based actions.",
-      "why_it_matters": "The partnership embeds agreement data and workflows directly into Salesforce's agentic platform, potentially reducing friction in sales cycles and making Agentforce more useful for revenue teams."
+      "summary": "Docusign expanded its more than 20-year Salesforce partnership by bringing Intelligent Agreement Management natively into Salesforce, Agentforce, and Slack. The integrations support agreement generation, negotiation, finalization, contract review, renewal tracking, post-execution analytics, and agreement actions within Slack.",
+      "why_it_matters": "Embedding agreement intelligence and workflows across Salesforce's agentic platform can reduce friction in revenue processes, expose contract data to authorized AI agents, and help sales and legal teams move from customer engagement to signed agreements without switching systems."
     },
     {
       "article_id": "salesforce-salesforce-signs-definitive-agreement-to-acquire-loops-2026-10-12",
@@ -67,36 +39,8 @@
       "priority": "High",
       "original_url": "https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-loops/",
       "url_verified": true,
-      "summary": "Salesforce signed a definitive agreement to acquire Loops, an AI-powered analytics platform that monitors business performance, explains metric changes, and surfaces recommended actions. Salesforce plans to bring Loops technology and talent into Tableau after closing.",
-      "why_it_matters": "The acquisition strengthens Salesforce's agentic analytics strategy by adding proactive performance monitoring and action-oriented insights to Tableau, Slack, and email workflows."
-    },
-    {
-      "article_id": "salesforce-salesforce-pledges-free-slack-enterprise-access-to-millions-of-higher-and-further-education-students-in-the-uk-2026-10-15",
-      "headline": "Salesforce Pledges Free Slack Enterprise Access to Millions of Higher and Further Education Students in the UK",
-      "publication_date": "2026-10-15",
-      "source": "Salesforce",
-      "source_type": "Salesforce Official",
-      "article_type": "Official Announcement",
-      "primary_category": "Strategy",
-      "priority": "Medium",
-      "original_url": "NOT VERIFIED",
-      "url_verified": false,
-      "summary": "Salesforce announced a pledge to provide free Slack enterprise access to millions of higher and further education students in the UK.",
-      "why_it_matters": "The initiative can expand Slack familiarity and adoption among future workers while strengthening Salesforce's education and workforce-development positioning."
-    },
-    {
-      "article_id": "salesforce-tottenham-hotspur-launches-ask-spurs-on-agentforce-2026-10-15",
-      "headline": "Tottenham Hotspur Launches Ask Spurs on Agentforce",
-      "publication_date": "2026-10-15",
-      "source": "Salesforce",
-      "source_type": "Salesforce Official",
-      "article_type": "Official Announcement",
-      "primary_category": "Customers & Deals",
-      "priority": "Medium",
-      "original_url": "NOT VERIFIED",
-      "url_verified": false,
-      "summary": "Salesforce announced that Tottenham Hotspur launched Ask Spurs on Agentforce.",
-      "why_it_matters": "The deployment is a visible customer example of Agentforce use in professional sports and fan engagement."
+      "summary": "Salesforce signed a definitive agreement to acquire Loops, an AI-powered analytics platform that continuously monitors business performance, explains changes in key metrics, and surfaces improvement opportunities. Salesforce plans to integrate Loops technology and specialized talent into Tableau after the transaction closes.",
+      "why_it_matters": "The acquisition advances Salesforce's agentic analytics strategy by adding proactive monitoring and explanations of performance drivers, with insights and recommended actions delivered through Tableau, Slack, and email. The transaction is expected to close in early November of Salesforce's fiscal year 2027, subject to customary closing conditions."
     },
     {
       "article_id": "zacks-investment-research-salesforce-expands-ai-bundles-will-higher-adoption-boost-arr-2026-10-02",
@@ -107,10 +51,10 @@
       "article_type": "Analysis",
       "primary_category": "AI & Agentforce",
       "priority": "Medium",
-      "original_url": "NOT VERIFIED",
-      "url_verified": false,
-      "summary": "Zacks analyzed Salesforce's expansion of premium AI bundles combining Agentforce, Slack, Tableau Next, security, and support. It highlighted Agentforce ARR above $1.5 billion in the second quarter, up more than 240% year over year, while noting that AI growth had not yet materially changed the company's overall growth rate.",
-      "why_it_matters": "The analysis focuses on whether bundled AI adoption can translate strong Agentforce usage into broader recurring-revenue acceleration amid competition from Microsoft and Oracle."
+      "original_url": "https://www.zacks.com/stock/news/2999297/salesforce-expands-ai-bundles-will-higher-adoption-boost-arr",
+      "url_verified": true,
+      "summary": "Zacks analyzed Salesforce's premium AI bundles combining Agentforce, Slack, Tableau Next, security, and support. Agentforce ARR topped $1.5 billion in the second quarter, up more than 240% year over year, while combined Agentforce and Data 360 ARR reached nearly $3.9 billion, rising more than 210%. The analysis noted that AI growth had not yet materially changed Salesforce's overall growth rate.",
+      "why_it_matters": "The bundled approach could increase adoption and recurring revenue as customers move from AI trials to broader purchases, but Salesforce faces intensifying AI-bundle competition from Microsoft and Oracle and still needs to translate adoption into faster company-wide growth."
     },
     {
       "article_id": "isaca-rethinking-salesforce-security-from-one-time-scoping-to-continuous-monitoring-2026-10-02",
@@ -123,8 +67,8 @@
       "priority": "Medium",
       "original_url": "https://www.isaca.org/resources/news-and-trends/industry-news/2026/rethinking-salesforce-security-from-one-time-scoping-to-continuous-monitoring",
       "url_verified": true,
-      "summary": "ISACA analyzed three recurring Salesforce exposure paths: fraudulent connected apps, compromised trusted integrations, and overly broad guest-user permissions. It argued that organizations should continuously monitor OAuth access, API traffic, privileged permissions, configuration drift, and financial-reporting scope.",
-      "why_it_matters": "The article frames Salesforce security as an ongoing governance and internal-control responsibility, especially as the platform expands into billing, commissions, and revenue-related workflows."
+      "summary": "ISACA examined three Salesforce exposure paths: fraudulent connected apps authorized through voice phishing, compromised credentials for trusted integrations, and overly broad guest-user permissions. The article recommends continuous monitoring of connected-app approvals, OAuth scopes, token use, API traffic, and session anomalies, along with periodic reviews of guest access, elevated permissions, sharing rules, and configuration changes.",
+      "why_it_matters": "The analysis shows that Salesforce environments can be exposed without a platform vulnerability when identity governance, integration oversight, and configuration management are weak. It also argues that organizations should reassess Salesforce's internal-control scope as the platform expands into billing, commissions, and revenue-related workflows."
     }
   ]
 }
