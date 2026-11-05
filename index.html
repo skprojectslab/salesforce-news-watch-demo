@@ -19,8 +19,17 @@ h3.headline{font-size:17px;line-height:1.4;margin:0 0 8px}.meta{font-size:12px;c
 @media(max-width:520px){.kpis{grid-template-columns:1fr 1fr}.toolbar{grid-template-columns:1fr}.toolbar input{grid-column:auto}.head{align-items:flex-start;flex-direction:column}.split{gap:6px}.splitbox{padding:10px}.barrow{grid-template-columns:105px 1fr 25px}}
 </style></head>
 <body>
-<header><div class="head"><div><div class="brand">Salesforce News Watch</div><div class="sub">AI-powered market, product and competitor intelligence</div></div><div class="live">● INTELLIGENCE DASHBOARD</div></div></header>
+<header><div class="head"><div><div class="brand">Salesforce News Watch</div><div class="sub">AI-powered market, product and competitor intelligence</div></div><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span id="authStatus" class="live">● Local preview</span><button id="authButton" class="live" style="background:#fff;color:#14233d;cursor:pointer">Sign in</button></div></div></header>
 <main>
+<section id="authPanel" class="panel" style="display:none;margin-bottom:18px">
+<h3>Team access</h3>
+<p class="meta">Sign in with your team account to sync feedback, notes and preferences across devices.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<input id="authEmail" type="email" placeholder="Work email" style="padding:10px;border:1px solid #dce2eb;border-radius:8px;min-width:220px">
+<input id="authPassword" type="password" placeholder="Password" style="padding:10px;border:1px solid #dce2eb;border-radius:8px;min-width:180px">
+<button id="signInBtn" class="note-save">Sign in</button><button id="signUpBtn" class="note-save">Create account</button><button id="signOutBtn" class="note-save" style="display:none">Sign out</button>
+</div><div id="authMessage" class="meta" style="margin-top:8px"></div>
+</section>
 <p class="eyebrow">Executive overview</p>
 <section class="kpis">
 <div class="kpi"><div class="n" id="total">—</div><div class="l">Articles classified</div><div class="hint">Current AI intelligence dataset</div></div>
@@ -76,18 +85,41 @@ function renderPreferences(){
  const x=getSignals(); const rows=(obj)=>Object.entries(obj).filter(([,v])=>v!==0).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="prefitem"><span>${esc(k)}</span><b style="color:${v>0?'var(--green)':'var(--red)'}">${v>0?'Preferred':'Reduce'}</b></div>`).join('')||'<span class="meta">No feedback yet.</span>';
  $('preferenceContent').innerHTML=`<div class="prefgrid"><div><div class="eyebrow">Topics & categories</div>${rows(x.categories)}</div><div><div class="eyebrow">Sources</div>${rows(x.sources)}</div></div><div style="margin-top:12px"><div class="eyebrow">Blocked sources</div>${x.blocked.size?[...x.blocked].map(v=>`<span class="blocked">${esc(v)} <button onclick="restoreSource('${esc(v).replace(/'/g,"\\'")}')" title="Restore source">× Restore</button></span>`).join(''):'<span class="meta">No blocked sources.</span>'}</div>`;
 }
-function giveFeedback(id,fb){
+async function giveFeedback(id,fb){
  const a=articles.find(x=>(x.id||x.article_id)===id); if(!a)return;
- const key='feedback_'+id,old=localStorage.getItem(key);
- if(old===fb)localStorage.removeItem(key);else localStorage.setItem(key,fb);
- localStorage.setItem('feedback_category_'+id,category(a));localStorage.setItem('feedback_source_'+id,a.source||'Unknown source');
+ const key='feedback_'+id,old=localStorage.getItem(key),next=old===fb?null:fb;
+ if(supabaseClient && currentUser){
+   if(next){
+     const payload={user_id:currentUser.id,article_id:String(id),feedback_type:next,category:category(a),source_name:a.source||'Unknown source'};
+     const {error}=await supabaseClient.from('article_feedback').upsert(payload,{onConflict:'user_id,article_id'});
+     if(error){$('authMessage').textContent='Could not save feedback: '+error.message;return;}
+     localStorage.setItem(key,next);
+   }else{
+     const {error}=await supabaseClient.from('article_feedback').delete().eq('user_id',currentUser.id).eq('article_id',String(id));
+     if(error){$('authMessage').textContent='Could not remove feedback: '+error.message;return;}
+     localStorage.removeItem(key);
+   }
+   localStorage.setItem('feedback_category_'+id,category(a));localStorage.setItem('feedback_source_'+id,a.source||'Unknown source');
+ }else{
+   if(next)localStorage.setItem(key,next);else localStorage.removeItem(key);
+   localStorage.setItem('feedback_category_'+id,category(a));localStorage.setItem('feedback_source_'+id,a.source||'Unknown source');
+ }
  renderPreferences();render();
 }
 function restoreSource(source){
  for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(k&&k.startsWith('feedback_source_')&&localStorage.getItem(k)===source){const id=k.slice('feedback_source_'.length);if(localStorage.getItem('feedback_'+id)==='Remove Source')localStorage.removeItem('feedback_'+id);}}
  renderPreferences();render();
 }
-function saveNote(id){const v=$('note-'+id).value;localStorage.setItem('article_note_'+id,v);$('note-status-'+id).textContent='Note saved in this browser';}
+async function saveNote(id){
+ const v=$('note-'+id).value;
+ if(supabaseClient && currentUser){
+   const {error}=await supabaseClient.from('article_notes').upsert({user_id:currentUser.id,article_id:String(id),note_text:v,updated_at:new Date().toISOString()},{onConflict:'user_id,article_id'});
+   if(error){$('note-status-'+id).textContent='Save failed: '+error.message;return;}
+   $('note-status-'+id).textContent='Note synced to your team account';
+ }else{
+   localStorage.setItem('article_note_'+id,v);$('note-status-'+id).textContent='Note saved in this browser (configure team database to sync)';
+ }
+}
 function render(){
  const q=$('search').value.toLowerCase(),dec=$('decision').value,cat=$('category').value,pri=$('priority').value,signals=getSignals();
  const filtered=articles.filter(a=>!signals.blocked.has(a.source)&&(dec==='All'||disposition(a)===dec)&&(cat==='All'||category(a)===cat)&&(pri==='All'||priority(a)===pri)&&[a.headline,a.summary,a.why_it_matters,a.relevance_reason,a.source,a.country].some(v=>norm(v).toLowerCase().includes(q)));
@@ -99,7 +131,45 @@ function render(){
  }).join(''):'<div class="empty">No articles match these filters.</div>';
 }
 ['search','decision','category','priority'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));
-async function load(){
+
+
+async function refreshTeamData(){
+ if(!supabaseClient || !currentUser)return;
+ const [{data:fb,error:fe},{data:notes,error:ne}] = await Promise.all([
+   supabaseClient.from('article_feedback').select('article_id,feedback_type,category,source_name').eq('user_id',currentUser.id),
+   supabaseClient.from('article_notes').select('article_id,note_text').eq('user_id',currentUser.id)
+ ]);
+ if(fe||ne){$('authMessage').textContent='Could not load team preferences: '+(fe?.message||ne?.message);return;}
+ (fb||[]).forEach(x=>{localStorage.setItem('feedback_'+x.article_id,x.feedback_type||'');localStorage.setItem('feedback_category_'+x.article_id,x.category||'Other');localStorage.setItem('feedback_source_'+x.article_id,x.source_name||'Unknown source');});
+ (notes||[]).forEach(x=>localStorage.setItem('article_note_'+x.article_id,x.note_text||''));
+ renderPreferences();render();
+}
+async function refreshAuthUI(){
+ if(!supabaseClient){$('authStatus').textContent='● Local preview';$('authMessage').textContent='Add your Supabase project URL and anon key to enable team accounts and cloud sync.';return;}
+ const {data:{session}}=await supabaseClient.auth.getSession();currentUser=session?.user||null;
+ $('authStatus').textContent=currentUser?'● Signed in: '+currentUser.email:'● Not signed in';
+ $('authButton').textContent=currentUser?'Account':'Sign in';
+ $('signOutBtn').style.display=currentUser?'inline-block':'none';
+ $('signInBtn').style.display=currentUser?'none':'inline-block';$('signUpBtn').style.display=currentUser?'none':'inline-block';
+ if(currentUser){await refreshTeamData();await loadArticlesFromDatabase();}
+}
+$('authButton').addEventListener('click',()=>{$('authPanel').style.display=$('authPanel').style.display==='none'?'block':'none';});
+$('signInBtn').addEventListener('click',async()=>{
+ if(!supabaseClient)return;const {error}=await supabaseClient.auth.signInWithPassword({email:$('authEmail').value,password:$('authPassword').value});
+ $('authMessage').textContent=error?error.message:'Signed in.';if(!error)await refreshAuthUI();
+});
+$('signUpBtn').addEventListener('click',async()=>{
+ if(!supabaseClient)return;const {error}=await supabaseClient.auth.signUp({email:$('authEmail').value,password:$('authPassword').value});
+ $('authMessage').textContent=error?error.message:'Account created. Check your email if confirmation is enabled.';
+});
+$('signOutBtn').addEventListener('click',async()=>{if(supabaseClient){await supabaseClient.auth.signOut();currentUser=null;await refreshAuthUI();}});
+async function loadArticlesFromDatabase(){
+ if(!supabaseClient||!currentUser)return;
+ const {data,error}=await supabaseClient.from('articles').select('*').order('publication_datetime',{ascending:false});
+ if(error){$('authMessage').textContent='Database article read failed: '+error.message;return;}
+ if(data && data.length){articles=data.map(x=>({...x,original_url:x.original_url}));dashboard();renderPreferences();}
+}
+\nasync function load(){
  try{
  let r=await fetch('./data/ai_classified_news.json',{cache:'no-store'});
  if(!r.ok)r=await fetch('./data/current.json',{cache:'no-store'});
