@@ -11,7 +11,7 @@ header{background:linear-gradient(115deg,#101f38,#183e70);color:white;padding:28
 main{max-width:1320px;margin:26px auto;padding:0 20px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.2px;color:#718096;text-transform:uppercase;margin:0 0 12px}
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.kpi,.panel,.toolbar,.article{background:white;border:1px solid var(--line);border-radius:14px}.kpi{padding:18px 20px}.kpi .n{font-size:30px;font-weight:800;letter-spacing:-1px}.kpi .l{font-size:13px;color:var(--muted);margin-top:5px}.kpi .hint{font-size:11px;color:#8a94a6;margin-top:9px}
 .row2{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;margin-top:18px}.panel{padding:20px}.panel h3{margin:0 0 16px;font-size:15px}.bars{display:grid;gap:11px}.barrow{display:grid;grid-template-columns:minmax(120px,190px) 1fr 34px;gap:10px;align-items:center;font-size:12px}.track{height:9px;border-radius:10px;background:#edf1f6;overflow:hidden}.fill{height:100%;border-radius:10px;background:#3978d4}.barval{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}.split{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.splitbox{padding:13px;border-radius:10px;background:#f7f9fc}.splitbox b{display:block;font-size:23px}.splitbox span{font-size:12px;color:var(--muted)}.green{color:var(--green)}.amber{color:var(--amber)}.red{color:var(--red)}
-.toolbar{margin-top:18px;padding:16px;display:grid;grid-template-columns:1.6fr repeat(3,minmax(130px,1fr));gap:10px}.toolbar input,.toolbar select{width:100%;padding:11px 12px;border:1px solid #dce2eb;border-radius:9px;background:#fff;color:var(--ink);font-size:13px}.feedhead{display:flex;justify-content:space-between;align-items:center;margin:22px 2px 12px}.feedhead h2{font-size:18px;margin:0}.count{font-size:12px;color:var(--muted)}
+.preferences{margin-top:18px;padding:18px 20px;background:#fff;border:1px solid var(--line);border-radius:14px}.prefgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.prefitem{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid #eef1f5;font-size:12px}.prefitem:last-child{border:0}.prefhead{font-size:14px;font-weight:800;margin:0 0 5px}.prefsub{font-size:12px;color:var(--muted);margin-bottom:14px}.blocked{display:inline-flex;align-items:center;gap:8px;background:#fff0f0;color:var(--red);padding:6px 9px;border-radius:7px;font-size:12px;margin:4px}.blocked button{border:0;background:transparent;color:inherit;cursor:pointer;font-weight:700}.feedback{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid #edf0f4}.feedback button,.note-save{border:1px solid #dce2eb;background:#fff;border-radius:8px;padding:8px 11px;font-size:12px;cursor:pointer}.feedback button.selected{background:#e9eefb;border-color:#7d91c8}.notearea{width:100%;min-height:58px;border:1px solid #dce2eb;border-radius:8px;padding:9px;font:12px Arial;margin-top:10px}.note-row{display:flex;align-items:center;gap:8px;margin-top:6px}.note-status{font-size:11px;color:var(--green)}.personalised{font-size:10px;color:var(--green);font-weight:700;margin-left:6px}.toolbar{margin-top:18px;padding:16px;display:grid;grid-template-columns:1.6fr repeat(3,minmax(130px,1fr));gap:10px}.toolbar input,.toolbar select{width:100%;padding:11px 12px;border:1px solid #dce2eb;border-radius:9px;background:#fff;color:var(--ink);font-size:13px}.feedhead{display:flex;justify-content:space-between;align-items:center;margin:22px 2px 12px}.feedhead h2{font-size:18px;margin:0}.count{font-size:12px;color:var(--muted)}
 .article{padding:20px;margin-bottom:12px}.top{display:flex;justify-content:space-between;gap:16px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}.tag{font-size:11px;font-weight:700;padding:5px 8px;border-radius:6px;background:#eef3ff;color:#3155a6}.tag.keep{background:#eaf7ef;color:var(--green)}.tag.review{background:#fff4df;color:var(--amber)}.tag.exclude{background:#fff0f0;color:var(--red)}.tag.high{background:#fff0f0;color:var(--red)}.tag.medium{background:#fff4df;color:var(--amber)}.tag.low{background:#f0f2f6;color:#667085}
 h3.headline{font-size:17px;line-height:1.4;margin:0 0 8px}.meta{font-size:12px;color:var(--muted);line-height:1.6}.bodycopy{font-size:13px;line-height:1.65;color:#3d4858;margin-top:12px}.bodycopy strong{display:block;color:#596579;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}.articlefoot{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid #edf0f4;margin-top:14px;padding-top:12px}.articlefoot a{color:var(--blue);font-size:13px;font-weight:700;text-decoration:none}.reason{font-size:11px;color:#768195}
 .empty{background:white;border:1px solid var(--line);border-radius:12px;padding:40px;text-align:center;color:var(--muted)}footer{max-width:1320px;margin:22px auto 35px;padding:0 20px;color:#8a94a6;font-size:11px}
@@ -34,6 +34,7 @@ h3.headline{font-size:17px;line-height:1.4;margin:0 0 8px}.meta{font-size:12px;c
 <div class="splitbox"><b class="green" id="keep2">—</b><span>Keep</span></div><div class="splitbox"><b class="amber" id="review2">—</b><span>Review</span></div><div class="splitbox"><b class="red" id="exclude2">—</b><span>Exclude</span></div>
 </div><h3 style="margin-top:22px">Priority mix</h3><div class="bars" id="priorityBars"></div></div>
 </section>
+<section class="preferences" id="preferences"><div class="prefhead">Your News Preferences</div><div class="prefsub">Your feedback shapes the topics and sources prioritised in this browser.</div><div id="preferenceContent">No feedback yet.</div></section>
 <div class="toolbar">
 <input id="search" type="search" placeholder="Search headlines, summaries, sources…" aria-label="Search articles">
 <select id="decision"><option value="All">All dispositions</option><option value="keep">Keep</option><option value="review">Review</option><option value="exclude">Exclude</option></select>
@@ -62,14 +63,39 @@ function dashboard(){
  const cats=Object.keys(c).sort();$('category').innerHTML='<option value="All">All categories</option>'+cats.map(x=>`<option>${esc(x)}</option>`).join('');
  render();
 }
+function getSignals(){
+ const categories={},sources={},blocked=new Set();
+ for(let i=0;i<localStorage.length;i++){
+  const k=localStorage.key(i); if(!k||!k.startsWith('feedback_')||k.startsWith('feedback_category_')||k.startsWith('feedback_source_'))continue;
+  const id=k.slice('feedback_'.length),fb=localStorage.getItem(k),cat=localStorage.getItem('feedback_category_'+id),src=localStorage.getItem('feedback_source_'+id);
+  if(!cat||!src)continue; categories[cat]=(categories[cat]||0)+(fb==='Like'?2:fb==='Dislike'?-2:fb==='Remove Source'?-3:0); sources[src]=(sources[src]||0)+(fb==='Like'?2:fb==='Dislike'?-2:fb==='Remove Source'?-3:0); if(fb==='Remove Source')blocked.add(src);
+ }
+ return {categories,sources,blocked};
+}
+function renderPreferences(){
+ const x=getSignals(); const rows=(obj)=>Object.entries(obj).filter(([,v])=>v!==0).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="prefitem"><span>${esc(k)}</span><b style="color:${v>0?'var(--green)':'var(--red)'}">${v>0?'Preferred':'Reduce'}</b></div>`).join('')||'<span class="meta">No feedback yet.</span>';
+ $('preferenceContent').innerHTML=`<div class="prefgrid"><div><div class="eyebrow">Topics & categories</div>${rows(x.categories)}</div><div><div class="eyebrow">Sources</div>${rows(x.sources)}</div></div><div style="margin-top:12px"><div class="eyebrow">Blocked sources</div>${x.blocked.size?[...x.blocked].map(v=>`<span class="blocked">${esc(v)} <button onclick="restoreSource('${esc(v).replace(/'/g,"\\'")}')" title="Restore source">× Restore</button></span>`).join(''):'<span class="meta">No blocked sources.</span>'}</div>`;
+}
+function giveFeedback(id,fb){
+ const a=articles.find(x=>(x.id||x.article_id)===id); if(!a)return;
+ const key='feedback_'+id,old=localStorage.getItem(key);
+ if(old===fb)localStorage.removeItem(key);else localStorage.setItem(key,fb);
+ localStorage.setItem('feedback_category_'+id,category(a));localStorage.setItem('feedback_source_'+id,a.source||'Unknown source');
+ renderPreferences();render();
+}
+function restoreSource(source){
+ for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(k&&k.startsWith('feedback_source_')&&localStorage.getItem(k)===source){const id=k.slice('feedback_source_'.length);if(localStorage.getItem('feedback_'+id)==='Remove Source')localStorage.removeItem('feedback_'+id);}}
+ renderPreferences();render();
+}
+function saveNote(id){const v=$('note-'+id).value;localStorage.setItem('article_note_'+id,v);$('note-status-'+id).textContent='Note saved in this browser';}
 function render(){
- const q=$('search').value.toLowerCase(),dec=$('decision').value,cat=$('category').value,pri=$('priority').value;
- const filtered=articles.filter(a=>(dec==='All'||disposition(a)===dec)&&(cat==='All'||category(a)===cat)&&(pri==='All'||priority(a)===pri)&&[a.headline,a.summary,a.why_it_matters,a.relevance_reason,a.source,a.country].some(v=>norm(v).toLowerCase().includes(q)));
- $('shown').textContent=`Showing ${filtered.length} of ${articles.length} articles`;
+ const q=$('search').value.toLowerCase(),dec=$('decision').value,cat=$('category').value,pri=$('priority').value,signals=getSignals();
+ const filtered=articles.filter(a=>!signals.blocked.has(a.source)&&(dec==='All'||disposition(a)===dec)&&(cat==='All'||category(a)===cat)&&(pri==='All'||priority(a)===pri)&&[a.headline,a.summary,a.why_it_matters,a.relevance_reason,a.source,a.country].some(v=>norm(v).toLowerCase().includes(q)));
+ $('shown').textContent=`Showing ${filtered.length} of ${articles.length-signals.blocked.size} available articles`;
  $('news').innerHTML=filtered.length?filtered.map(a=>{
- const disp=disposition(a),id=a.id||a.article_id;
+ const disp=disposition(a),id=a.id||a.article_id,fb=localStorage.getItem('feedback_'+id)||'',note=localStorage.getItem('article_note_'+id)||'';
  const link=a.url_verified!==false&&a.original_url&&a.original_url!=='NOT VERIFIED'?`<a href="${esc(a.original_url)}" target="_blank" rel="noopener noreferrer">Read original article ↗</a>`:'<span class="reason">Original URL not verified</span>';
- return `<article class="article"><div class="top"><div style="min-width:0"><div class="tags"><span class="tag">${esc(category(a))}</span><span class="tag ${['keep','review','exclude'].includes(disp)?disp:'review'}">${esc(disp.toUpperCase())}</span><span class="tag ${priority(a).toLowerCase()}">${esc(priority(a))} priority</span><span class="tag">${esc(a.article_type||'News')}</span></div><h3 class="headline">${esc(a.headline||'Untitled article')}</h3><div class="meta">${esc(a.source||'Unknown source')} · ${esc((a.publication_datetime||a.publication_date||'').slice(0,10))}${a.country?' · '+esc(a.country):''}${a.language?' · '+esc(a.language):''}</div></div></div><div class="bodycopy"><strong>What happened</strong>${esc(a.summary||a.summary_raw||'No summary available.')}</div><div class="bodycopy"><strong>Why it matters</strong>${esc(a.why_it_matters||a.relevance_reason||'No impact assessment available.')}</div>${a.relevance_reason?`<div class="reason" style="margin-top:9px">Relevance assessment: ${esc(a.relevance_reason)}</div>`:''}<div class="articlefoot">${link}<span class="reason">ID: ${esc(id||'—')}</span></div></article>`;
+ return `<article class="article"><div class="top"><div style="min-width:0"><div class="tags"><span class="tag">${esc(category(a))}</span><span class="tag ${['keep','review','exclude'].includes(disp)?disp:'review'}">${esc(disp.toUpperCase())}</span><span class="tag ${priority(a).toLowerCase()}">${esc(priority(a))} priority</span><span class="tag">${esc(a.article_type||'News')}</span></div><h3 class="headline">${esc(a.headline||'Untitled article')}</h3><div class="meta">${esc(a.source||'Unknown source')} · ${esc((a.publication_datetime||a.publication_date||'').slice(0,10))}${a.country?' · '+esc(a.country):''}${a.language?' · '+esc(a.language):''}</div></div></div><div class="bodycopy"><strong>What happened</strong>${esc(a.summary||a.summary_raw||'No summary available.')}</div><div class="bodycopy"><strong>Why it matters</strong>${esc(a.why_it_matters||a.relevance_reason||'No impact assessment available.')}</div>${a.relevance_reason?`<div class="reason" style="margin-top:9px">Relevance assessment: ${esc(a.relevance_reason)}</div>`:''}<div class="articlefoot">${link}<span class="reason">ID: ${esc(id||'—')}</span></div><div class="feedback"><button class="${fb==='Like'?'selected':''}" onclick="giveFeedback('${esc(id)}','Like')">👍 Like</button><button class="${fb==='Dislike'?'selected':''}" onclick="giveFeedback('${esc(id)}','Dislike')">👎 Dislike</button><button class="${fb==='Ignore'?'selected':''}" onclick="giveFeedback('${esc(id)}','Ignore')">😐 Ignore</button><button class="${fb==='Remove Source'?'selected':''}" onclick="giveFeedback('${esc(id)}','Remove Source')">🚫 Remove source</button></div><textarea class="notearea" id="note-${esc(id)}" placeholder="Add your notes about this article…">${esc(note)}</textarea><div class="note-row"><button class="note-save" onclick="saveNote('${esc(id)}')">Save note</button><span class="note-status" id="note-status-${esc(id)}">${note?'Note saved in this browser':''}</span></div></article>`;
  }).join(''):'<div class="empty">No articles match these filters.</div>';
 }
 ['search','decision','category','priority'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));
@@ -79,7 +105,7 @@ async function load(){
  if(!r.ok)r=await fetch('./data/current.json',{cache:'no-store'});
  if(!r.ok)throw Error('Could not load news data');
  const data=await r.json();articles=Array.isArray(data)?data:(data.articles||[]);
- dashboard();
+ dashboard();renderPreferences();
  }catch(e){$('news').innerHTML='<div class="empty">Unable to load the news dataset. Check that data/ai_classified_news.json or data/current.json is published.</div>';console.error(e);}
 }
 load();
