@@ -184,7 +184,8 @@
   if(error){$('authMessage').textContent='Database article read failed: '+error.message;return;}
   if(data && data.length){articles=data.map(x=>({...x,original_url:x.original_url}));dashboard();renderPreferences();}
   }
-  \nasync function load(){
+  
+async function load(){
   try{
   let r=await fetch('./data/ai_classified_news.json',{cache:'no-store'});
   if(!r.ok)r=await fetch('./data/current.json',{cache:'no-store'});
