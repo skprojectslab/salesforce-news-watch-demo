@@ -1,700 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Salesforce News Watch</title>
-
-  <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fb;
-      color: #172033;
-    }
-
-    .header {
-      background: #ffffff;
-      border-bottom: 1px solid #e4e8f0;
-      padding: 28px 6%;
-    }
-
-    .header-inner {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .brand {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .subtitle {
-      color: #687386;
-      font-size: 15px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-
-    .toolbar {
-      background: white;
-      padding: 18px;
-      border-radius: 14px;
-      border: 1px solid #e4e8f0;
-      margin-bottom: 18px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .filter {
-      border: 1px solid #d9deea;
-      background: white;
-      padding: 9px 15px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    .filter.active {
-      background: #172033;
-      color: white;
-    }
-
-    .preferences {
-      background: white;
-      border: 1px solid #e4e8f0;
-      border-radius: 14px;
-      padding: 20px;
-      margin-bottom: 24px;
-    }
-
-    .preferences-title {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    .preferences-subtitle {
-      color: #687386;
-      font-size: 13px;
-      margin-bottom: 16px;
-    }
-
-    .preference-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .preference-column h4 {
-      margin: 0 0 10px;
-      font-size: 13px;
-      color: #596579;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-
-    .preference-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 8px 0;
-      border-bottom: 1px solid #f0f2f6;
-      font-size: 13px;
-    }
-
-    .preference-item:last-child {
-      border-bottom: 0;
-    }
-
-    .preference-score {
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .positive { color: #18794e; }
-    .negative { color: #b42318; }
-    .neutral { color: #687386; }
-
-    .blocked {
-      display: inline-block;
-      margin: 4px 6px 0 0;
-      padding: 6px 9px;
-      border-radius: 8px;
-      background: #fff0f0;
-      color: #b42318;
-      font-size: 12px;
-    }
-
-    .personalisation-note {
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid #edf0f4;
-      color: #687386;
-      font-size: 12px;
-    }
-
-    .article {
-      background: white;
-      border: 1px solid #e4e8f0;
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 18px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .article:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(20, 30, 50, 0.08);
-    }
-
-    .article-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    .priority {
-      font-size: 11px;
-      font-weight: 700;
-      padding: 6px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-
-    .priority.high { background: #ffe5e5; color: #b42318; }
-    .priority.medium { background: #fff1d6; color: #9a6700; }
-    .priority.low { background: #edf0f5; color: #667085; }
-
-    .headline {
-      font-size: 21px;
-      line-height: 1.3;
-      margin: 8px 0;
-    }
-
-    .meta {
-      color: #687386;
-      font-size: 13px;
-      margin-bottom: 16px;
-    }
-
-    .category {
-      display: inline-block;
-      background: #eef3ff;
-      color: #3155a6;
-      padding: 6px 10px;
-      border-radius: 8px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 14px;
-    }
-
-    .personalised {
-      display: inline-block;
-      margin-left: 7px;
-      background: #edf8f2;
-      color: #18794e;
-      padding: 5px 8px;
-      border-radius: 8px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .label {
-      font-size: 12px;
-      font-weight: 700;
-      color: #596579;
-      margin-top: 12px;
-      margin-bottom: 5px;
-    }
-
-    .summary,
-    .why {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #374151;
-    }
-
-    .read {
-      display: inline-block;
-      margin-top: 18px;
-      color: #1769e0;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .feedback {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      border-top: 1px solid #edf0f4;
-      margin-top: 20px;
-      padding-top: 16px;
-    }
-
-    .feedback button {
-      border: 1px solid #d9deea;
-      background: white;
-      padding: 9px 13px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    .feedback button:hover { background: #f4f6f9; }
-
-    .feedback button.selected {
-      background: #e9eefb;
-      border-color: #7d91c8;
-    }
-
-    .status {
-      margin-top: 10px;
-      font-size: 12px;
-      color: #687386;
-      min-height: 16px;
-    }
-
-    .empty {
-      text-align: center;
-      background: white;
-      border-radius: 14px;
-      padding: 50px;
-      color: #687386;
-    }
-
-    @media (max-width: 700px) {
-      .article-top { flex-direction: column; }
-      .headline { font-size: 18px; }
-      .preference-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salesforce News Watch | Intelligence Dashboard</title>
+<style>
+:root{--ink:#172033;--muted:#687386;--line:#e5eaf1;--blue:#1769e0;--navy:#14233d;--bg:#f4f7fb;--green:#18794e;--amber:#9a6700;--red:#b42318}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif}
+header{background:linear-gradient(115deg,#101f38,#183e70);color:white;padding:28px max(22px,calc((100% - 1320px)/2))}
+.head{display:flex;justify-content:space-between;gap:20px;align-items:center}.brand{font-size:27px;font-weight:800;letter-spacing:-.5px}.sub{color:#c6d5e9;margin-top:6px;font-size:14px}.live{border:1px solid #55769e;border-radius:20px;padding:8px 12px;font-size:12px;color:#e6f0ff}
+main{max-width:1320px;margin:26px auto;padding:0 20px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.2px;color:#718096;text-transform:uppercase;margin:0 0 12px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.kpi,.panel,.toolbar,.article{background:white;border:1px solid var(--line);border-radius:14px}.kpi{padding:18px 20px}.kpi .n{font-size:30px;font-weight:800;letter-spacing:-1px}.kpi .l{font-size:13px;color:var(--muted);margin-top:5px}.kpi .hint{font-size:11px;color:#8a94a6;margin-top:9px}
+.row2{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;margin-top:18px}.panel{padding:20px}.panel h3{margin:0 0 16px;font-size:15px}.bars{display:grid;gap:11px}.barrow{display:grid;grid-template-columns:minmax(120px,190px) 1fr 34px;gap:10px;align-items:center;font-size:12px}.track{height:9px;border-radius:10px;background:#edf1f6;overflow:hidden}.fill{height:100%;border-radius:10px;background:#3978d4}.barval{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}.split{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.splitbox{padding:13px;border-radius:10px;background:#f7f9fc}.splitbox b{display:block;font-size:23px}.splitbox span{font-size:12px;color:var(--muted)}.green{color:var(--green)}.amber{color:var(--amber)}.red{color:var(--red)}
+.toolbar{margin-top:18px;padding:16px;display:grid;grid-template-columns:1.6fr repeat(3,minmax(130px,1fr));gap:10px}.toolbar input,.toolbar select{width:100%;padding:11px 12px;border:1px solid #dce2eb;border-radius:9px;background:#fff;color:var(--ink);font-size:13px}.feedhead{display:flex;justify-content:space-between;align-items:center;margin:22px 2px 12px}.feedhead h2{font-size:18px;margin:0}.count{font-size:12px;color:var(--muted)}
+.article{padding:20px;margin-bottom:12px}.top{display:flex;justify-content:space-between;gap:16px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}.tag{font-size:11px;font-weight:700;padding:5px 8px;border-radius:6px;background:#eef3ff;color:#3155a6}.tag.keep{background:#eaf7ef;color:var(--green)}.tag.review{background:#fff4df;color:var(--amber)}.tag.exclude{background:#fff0f0;color:var(--red)}.tag.high{background:#fff0f0;color:var(--red)}.tag.medium{background:#fff4df;color:var(--amber)}.tag.low{background:#f0f2f6;color:#667085}
+h3.headline{font-size:17px;line-height:1.4;margin:0 0 8px}.meta{font-size:12px;color:var(--muted);line-height:1.6}.bodycopy{font-size:13px;line-height:1.65;color:#3d4858;margin-top:12px}.bodycopy strong{display:block;color:#596579;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}.articlefoot{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid #edf0f4;margin-top:14px;padding-top:12px}.articlefoot a{color:var(--blue);font-size:13px;font-weight:700;text-decoration:none}.reason{font-size:11px;color:#768195}
+.empty{background:white;border:1px solid var(--line);border-radius:12px;padding:40px;text-align:center;color:var(--muted)}footer{max-width:1320px;margin:22px auto 35px;padding:0 20px;color:#8a94a6;font-size:11px}
+@media(max-width:850px){.kpis{grid-template-columns:repeat(2,1fr)}.row2{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr 1fr}.toolbar input{grid-column:1/-1}}
+@media(max-width:520px){.kpis{grid-template-columns:1fr 1fr}.toolbar{grid-template-columns:1fr}.toolbar input{grid-column:auto}.head{align-items:flex-start;flex-direction:column}.split{gap:6px}.splitbox{padding:10px}.barrow{grid-template-columns:105px 1fr 25px}}
+</style></head>
 <body>
-
-  <header class="header">
-    <div class="header-inner">
-      <div class="brand">Salesforce News Watch</div>
-      <div class="subtitle">AI-powered Salesforce intelligence feed</div>
-    </div>
-  </header>
-
-  <main class="container">
-
-    <div class="toolbar">
-      <button class="filter active" onclick="filterArticles('All', this)">All</button>
-      <button class="filter" onclick="filterArticles('AI & Agentforce', this)">AI & Agentforce</button>
-      <button class="filter" onclick="filterArticles('Product & Platform', this)">Product</button>
-      <button class="filter" onclick="filterArticles('Security / Trust', this)">Security</button>
-      <button class="filter" onclick="filterArticles('M&A / Investment', this)">M&A</button>
-      <button class="filter" onclick="filterArticles('Financial / Earnings', this)">Financial</button>
-    </div>
-
-    <section class="preferences" id="preferences"></section>
-
-    <div id="news"></div>
-
-  </main>
-
-  <script>
-    let articles = [];
-    let activeFilter = "All";
-
-    const PRIORITY_SCORE = {
-      High: 3,
-      Medium: 2,
-      Low: 1
-    };
-
-    async function loadNews() {
-      try {
-        const response = await fetch("./data/current.json");
-        if (!response.ok) throw new Error("Unable to load current.json");
-
-        const data = await response.json();
-        articles = data.articles || [];
-
-        renderPreferences();
-        renderNews();
-
-      } catch (error) {
-        document.getElementById("news").innerHTML = `
-          <div class="empty">
-            Unable to load the Salesforce news data.
-          </div>
-        `;
-        console.error(error);
-      }
-    }
-
-    /*
-      Reads the feedback already stored by the existing app.
-
-      Existing keys:
-      feedback_<articleId> = Like / Dislike / Ignore / Remove Source
-      feedback_category_<articleId> = article category
-      feedback_source_<articleId> = article source
-    */
-    function getUserSignals() {
-      const categories = {};
-      const sources = {};
-      const blockedSources = new Set();
-
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (!key) continue;
-
-        if (key.startsWith("feedback_") &&
-            !key.startsWith("feedback_category_") &&
-            !key.startsWith("feedback_source_")) {
-
-          const articleId = key.replace("feedback_", "");
-          const feedback = localStorage.getItem(key);
-          const category = localStorage.getItem("feedback_category_" + articleId);
-          const source = localStorage.getItem("feedback_source_" + articleId);
-
-          if (!category || !source) continue;
-
-          if (!categories[category]) categories[category] = 0;
-          if (!sources[source]) sources[source] = 0;
-
-          if (feedback === "Like") {
-            categories[category] += 2;
-            sources[source] += 2;
-          }
-
-          if (feedback === "Dislike") {
-            categories[category] -= 2;
-            sources[source] -= 2;
-          }
-
-          if (feedback === "Remove Source") {
-            categories[category] -= 3;
-            sources[source] -= 3;
-            blockedSources.add(source);
-          }
-        }
-      }
-
-      return { categories, sources, blockedSources };
-    }
-
-    function preferenceLabel(score) {
-      if (score >= 4) return "Strong interest";
-      if (score >= 2) return "Positive";
-      if (score <= -4) return "Strongly avoid";
-      if (score <= -2) return "Low interest";
-      return "Neutral";
-    }
-
-    function preferenceClass(score) {
-      if (score > 0) return "positive";
-      if (score < 0) return "negative";
-      return "neutral";
-    }
-
-    function renderPreferences() {
-      const signals = getUserSignals();
-      const categoryEntries = Object.entries(signals.categories)
-        .filter(([, score]) => score !== 0)
-        .sort((a, b) => b[1] - a[1]);
-
-      const sourceEntries = Object.entries(signals.sources)
-        .filter(([, score]) => score !== 0)
-        .sort((a, b) => b[1] - a[1]);
-
-      let categoryHTML = categoryEntries.length
-        ? categoryEntries.map(([name, score]) => `
-            <div class="preference-item">
-              <span>${escapeHTML(name)}</span>
-              <span class="preference-score ${preferenceClass(score)}">
-                ${preferenceLabel(score)}
-              </span>
-            </div>
-          `).join("")
-        : `<div class="neutral" style="font-size:13px;">No strong category preference yet.</div>`;
-
-      let sourceHTML = sourceEntries.length
-        ? sourceEntries.map(([name, score]) => `
-            <div class="preference-item">
-              <span>${escapeHTML(name)}</span>
-              <span class="preference-score ${preferenceClass(score)}">
-                ${score > 0 ? "Preferred" : "Reduce"}
-              </span>
-            </div>
-          `).join("")
-        : `<div class="neutral" style="font-size:13px;">No source preference yet.</div>`;
-
-      const blockedHTML = signals.blockedSources.size
-        ? Array.from(signals.blockedSources).map(source =>
-            `<span class="blocked">${escapeHTML(source)}</span>`
-          ).join("")
-        : `<span class="neutral" style="font-size:13px;">None</span>`;
-
-      document.getElementById("preferences").innerHTML = `
-        <div class="preferences-title">Your News Preferences</div>
-        <div class="preferences-subtitle">
-          Based on the feedback you have given this app.
-        </div>
-
-        <div class="preference-grid">
-          <div class="preference-column">
-            <h4>Topics & Categories</h4>
-            ${categoryHTML}
-          </div>
-
-          <div class="preference-column">
-            <h4>Sources</h4>
-            ${sourceHTML}
-          </div>
-        </div>
-
-        <div class="preference-column" style="margin-top:18px;">
-          <h4>Blocked Sources</h4>
-          ${blockedHTML}
-        </div>
-
-        <div class="personalisation-note">
-          Personalisation is currently based on your local feedback. 
-          More feedback will make these preferences more meaningful.
-        </div>
-      `;
-    }
-
-    function getArticleScore(article) {
-      const signals = getUserSignals();
-
-      if (signals.blockedSources.has(article.source)) {
-        return -999;
-      }
-
-      let score = PRIORITY_SCORE[article.priority] || 0;
-
-      score += signals.categories[article.primary_category] || 0;
-      score += signals.sources[article.source] || 0;
-
-      return score;
-    }
-
-    function getWhyShown(article) {
-      const signals = getUserSignals();
-      const reasons = [];
-
-      if ((signals.categories[article.primary_category] || 0) > 0) {
-        reasons.push("matches a category you have liked");
-      }
-
-      if ((signals.sources[article.source] || 0) > 0) {
-        reasons.push("comes from a source you have engaged positively with");
-      }
-
-      if (reasons.length === 0) {
-        return "";
-      }
-
-      return "Shown because it " + reasons.join(" and ") + ".";
-    }
-
-    function renderNews() {
-      const container = document.getElementById("news");
-
-      let filtered = articles;
-
-      if (activeFilter !== "All") {
-        filtered = articles.filter(
-          article => article.primary_category === activeFilter
-        );
-      }
-
-      filtered = filtered
-        .filter(article => getArticleScore(article) > -999)
-        .sort((a, b) => getArticleScore(b) - getArticleScore(a));
-
-      if (filtered.length === 0) {
-        container.innerHTML = `
-          <div class="empty">
-            No articles found for this category.
-          </div>
-        `;
-        return;
-      }
-
-      container.innerHTML = filtered.map(article => {
-
-        const feedback =
-          localStorage.getItem("feedback_" + article.article_id);
-
-        const whyShown = getWhyShown(article);
-
-        return `
-          <article class="article">
-
-            <div class="article-top">
-              <div>
-
-                <div class="category">
-                  ${escapeHTML(article.primary_category)}
-                  ${whyShown ? `<span class="personalised">PERSONALISED</span>` : ""}
-                </div>
-
-                <h2 class="headline">
-                  ${escapeHTML(article.headline)}
-                </h2>
-
-                <div class="meta">
-                  ${escapeHTML(article.source)}
-                  &nbsp;•&nbsp;
-                  ${escapeHTML(article.publication_date)}
-                  &nbsp;•&nbsp;
-                  ${escapeHTML(article.article_type)}
-                </div>
-
-              </div>
-
-              <div class="priority ${String(article.priority).toLowerCase()}">
-                ${escapeHTML(article.priority)}
-              </div>
-            </div>
-
-            <div class="label">What happened</div>
-
-            <div class="summary">
-              ${escapeHTML(article.summary)}
-            </div>
-
-            <div class="label">Why it matters</div>
-
-            <div class="why">
-              ${escapeHTML(article.why_it_matters)}
-            </div>
-
-            ${whyShown ? `
-              <div class="label">Why you're seeing this</div>
-              <div class="why">${escapeHTML(whyShown)}</div>
-            ` : ""}
-
-            ${
-              article.url_verified &&
-              article.original_url !== "NOT VERIFIED"
-              ?
-              `<a class="read"
-                 href="${escapeHTML(article.original_url)}"
-                 target="_blank"
-                 rel="noopener noreferrer">
-                 Read original article →
-               </a>`
-              :
-              `<div class="meta" style="margin-top:18px;">
-                 Original article URL not verified
-               </div>`
-            }
-
-            <div class="feedback">
-
-              <button
-                class="${feedback === 'Like' ? 'selected' : ''}"
-                onclick="giveFeedback('${escapeHTML(article.article_id)}', 'Like')">
-                👍 Like
-              </button>
-
-              <button
-                class="${feedback === 'Dislike' ? 'selected' : ''}"
-                onclick="giveFeedback('${escapeHTML(article.article_id)}', 'Dislike')">
-                👎 Don't like
-              </button>
-
-              <button
-                class="${feedback === 'Ignore' ? 'selected' : ''}"
-                onclick="giveFeedback('${escapeHTML(article.article_id)}', 'Ignore')">
-                😐 Ignore
-              </button>
-
-              <button
-                class="${feedback === 'Remove Source' ? 'selected' : ''}"
-                onclick="giveFeedback('${escapeHTML(article.article_id)}', 'Remove Source')">
-                🚫 Remove source
-              </button>
-
-            </div>
-
-            <div
-              class="status"
-              id="status-${escapeHTML(article.article_id)}">
-              ${feedback ? "Feedback recorded: " + escapeHTML(feedback) : ""}
-            </div>
-
-          </article>
-        `;
-
-      }).join("");
-    }
-
-    function filterArticles(category, button) {
-      activeFilter = category;
-
-      document.querySelectorAll(".filter").forEach(
-        b => b.classList.remove("active")
-      );
-
-      button.classList.add("active");
-
-      renderNews();
-    }
-
-    function giveFeedback(articleId, feedback) {
-
-      localStorage.setItem(
-        "feedback_" + articleId,
-        feedback
-      );
-
-      const article = articles.find(
-        a => a.article_id === articleId
-      );
-
-      if (article) {
-
-        localStorage.setItem(
-          "feedback_category_" + articleId,
-          article.primary_category
-        );
-
-        localStorage.setItem(
-          "feedback_source_" + articleId,
-          article.source
-        );
-
-      }
-
-      renderPreferences();
-      renderNews();
-    }
-
-    function escapeHTML(value) {
-      if (value === null || value === undefined) return "";
-
-      return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-    }
-
-    loadNews();
-  </script>
-
-</body>
-</html>
+<header><div class="head"><div><div class="brand">Salesforce News Watch</div><div class="sub">AI-powered market, product and competitor intelligence</div></div><div class="live">● INTELLIGENCE DASHBOARD</div></div></header>
+<main>
+<p class="eyebrow">Executive overview</p>
+<section class="kpis">
+<div class="kpi"><div class="n" id="total">—</div><div class="l">Articles classified</div><div class="hint">Current AI intelligence dataset</div></div>
+<div class="kpi"><div class="n green" id="keep">—</div><div class="l">Relevant · Keep</div><div class="hint">Stories worth following</div></div>
+<div class="kpi"><div class="n amber" id="review">—</div><div class="l">Editorial review</div><div class="hint">Requires human judgement</div></div>
+<div class="kpi"><div class="n red" id="exclude">—</div><div class="l">Excluded</div><div class="hint">Low relevance or out of scope</div></div>
+</section>
+<section class="row2">
+<div class="panel"><h3>Coverage by intelligence category</h3><div class="bars" id="categoryBars"></div></div>
+<div class="panel"><h3>Editorial disposition</h3><div class="split">
+<div class="splitbox"><b class="green" id="keep2">—</b><span>Keep</span></div><div class="splitbox"><b class="amber" id="review2">—</b><span>Review</span></div><div class="splitbox"><b class="red" id="exclude2">—</b><span>Exclude</span></div>
+</div><h3 style="margin-top:22px">Priority mix</h3><div class="bars" id="priorityBars"></div></div>
+</section>
+<div class="toolbar">
+<input id="search" type="search" placeholder="Search headlines, summaries, sources…" aria-label="Search articles">
+<select id="decision"><option value="All">All dispositions</option><option value="keep">Keep</option><option value="review">Review</option><option value="exclude">Exclude</option></select>
+<select id="category"><option value="All">All categories</option></select>
+<select id="priority"><option value="All">All priorities</option><option>High</option><option>Medium</option><option>Low</option></select>
+</div>
+<div class="feedhead"><h2>News intelligence feed</h2><span class="count" id="shown"></span></div>
+<div id="news"><div class="empty">Loading intelligence…</div></div>
+</main>
+<footer>Salesforce News Watch · AI-assisted classification · Editorial review is recommended before external distribution.</footer>
+<script>
+let articles=[];
+const $=id=>document.getElementById(id);
+const norm=v=>String(v??"").trim();
+function esc(v){return norm(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function disposition(a){return norm(a.relevance_decision||a.relevance_status||"review").toLowerCase();}
+function category(a){return norm(a.primary_category||"Other");}
+function priority(a){let p=norm(a.priority);return ['High','Medium','Low'].includes(p)?p:'Low';}
+function countBy(arr,fn){return arr.reduce((o,a)=>(o[fn(a)]=(o[fn(a)]||0)+1,o),{});}
+function bars(target,counts){let entries=Object.entries(counts).sort((a,b)=>b[1]-a[1]);let max=Math.max(1,...entries.map(x=>x[1]));$(target).innerHTML=entries.map(([k,v])=>`<div class="barrow"><span>${esc(k)}</span><div class="track"><div class="fill" style="width:${v/max*100}%"></div></div><span class="barval">${v}</span></div>`).join('')||'<span class="meta">No data</span>';}
+function dashboard(){
+ const d=countBy(articles,disposition), p=countBy(articles,priority), c=countBy(articles,category);
+ $('total').textContent=articles.length;$('keep').textContent=d.keep||0;$('review').textContent=d.review||0;$('exclude').textContent=d.exclude||0;
+ $('keep2').textContent=d.keep||0;$('review2').textContent=d.review||0;$('exclude2').textContent=d.exclude||0;
+ bars('categoryBars',c);bars('priorityBars',p);
+ const cats=Object.keys(c).sort();$('category').innerHTML='<option value="All">All categories</option>'+cats.map(x=>`<option>${esc(x)}</option>`).join('');
+ render();
+}
+function render(){
+ const q=$('search').value.toLowerCase(),dec=$('decision').value,cat=$('category').value,pri=$('priority').value;
+ const filtered=articles.filter(a=>(dec==='All'||disposition(a)===dec)&&(cat==='All'||category(a)===cat)&&(pri==='All'||priority(a)===pri)&&[a.headline,a.summary,a.why_it_matters,a.relevance_reason,a.source,a.country].some(v=>norm(v).toLowerCase().includes(q)));
+ $('shown').textContent=`Showing ${filtered.length} of ${articles.length} articles`;
+ $('news').innerHTML=filtered.length?filtered.map(a=>{
+ const disp=disposition(a),id=a.id||a.article_id;
+ const link=a.url_verified!==false&&a.original_url&&a.original_url!=='NOT VERIFIED'?`<a href="${esc(a.original_url)}" target="_blank" rel="noopener noreferrer">Read original article ↗</a>`:'<span class="reason">Original URL not verified</span>';
+ return `<article class="article"><div class="top"><div style="min-width:0"><div class="tags"><span class="tag">${esc(category(a))}</span><span class="tag ${['keep','review','exclude'].includes(disp)?disp:'review'}">${esc(disp.toUpperCase())}</span><span class="tag ${priority(a).toLowerCase()}">${esc(priority(a))} priority</span><span class="tag">${esc(a.article_type||'News')}</span></div><h3 class="headline">${esc(a.headline||'Untitled article')}</h3><div class="meta">${esc(a.source||'Unknown source')} · ${esc((a.publication_datetime||a.publication_date||'').slice(0,10))}${a.country?' · '+esc(a.country):''}${a.language?' · '+esc(a.language):''}</div></div></div><div class="bodycopy"><strong>What happened</strong>${esc(a.summary||a.summary_raw||'No summary available.')}</div><div class="bodycopy"><strong>Why it matters</strong>${esc(a.why_it_matters||a.relevance_reason||'No impact assessment available.')}</div>${a.relevance_reason?`<div class="reason" style="margin-top:9px">Relevance assessment: ${esc(a.relevance_reason)}</div>`:''}<div class="articlefoot">${link}<span class="reason">ID: ${esc(id||'—')}</span></div></article>`;
+ }).join(''):'<div class="empty">No articles match these filters.</div>';
+}
+['search','decision','category','priority'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));
+async function load(){
+ try{
+ let r=await fetch('./data/ai_classified_news.json',{cache:'no-store'});
+ if(!r.ok)r=await fetch('./data/current.json',{cache:'no-store'});
+ if(!r.ok)throw Error('Could not load news data');
+ const data=await r.json();articles=Array.isArray(data)?data:(data.articles||[]);
+ dashboard();
+ }catch(e){$('news').innerHTML='<div class="empty">Unable to load the news dataset. Check that data/ai_classified_news.json or data/current.json is published.</div>';console.error(e);}
+}
+load();
+</script></body></html>
